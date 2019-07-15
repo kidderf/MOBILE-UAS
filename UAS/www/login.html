@@ -1,0 +1,88 @@
+<style type="text/css">
+  .row {
+  }
+  .account-wall{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 25%;
+  }
+  .img-login{
+    margin-bottom: 7%;
+  }
+  #form-add{
+    width: 90%;
+    margin-left: 5%;
+  }
+  .form-control, .btn-simpan, .new-account{
+    font-size: 25px;
+  }
+  .form-control{
+    border: 1px solid;
+  }
+  .btn-simpan{
+    margin-top: 5%;
+  }
+  .new-account{
+    float: right; 
+    cursor: pointer;
+  }
+  #box-add{
+    
+    border: 1px solid black;
+  }
+  .label-add{
+    font-size: 40px;
+    color: #0066ff;
+    font-weight: 600;
+    margin-left: 5%;
+  }
+</style>
+
+<div class="row" >
+  <div class="account-wall">
+    <center>
+      <div class="img-login">
+        <img src="./img/login/1.png" alt="">
+      </div>
+    </center>
+    <form id="form-login">
+      <input type="text" class="form-control" id="nim" name="nim" placeholder="NIM" onkeypress="return onlyNumeric(event)" required autofocus>
+      <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+      <span class="btn btn-lg btn-primary btn-block btn-simpan" onclick="login()"> MASUK </span>
+      <br>
+      <a href="#" class="text-center new-account" data-toggle="modal" data-target="#box-add">Buat Akun</a>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="box-add" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <label class="label-add">BUAT AKUN</label>
+        <button type="button" class="close" data-dismiss="modal" onclick="clearInput()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+        <!--<form id="form-add">
+          <input type="text" id="nim-add" name="nim-add" class="form-control" placeholder="NIM" onkeypress="return onlyNumeric(event)" required autofocus>
+          <input type="text" id="nama-add" name="nama-add" class="form-control" placeholder="Nama" required>
+          <input type="text" id="progsi-add" name="progdi-add" class="form-control" placeholder="Progdi" required>
+          <input type="text" id="kelas-add" name="kelas-add" class="form-control" placeholder="Kelas" required>
+          <input type="text" id="email-add" name="email-add" class="form-control" placeholder="Email" required>
+        </form>-->
+        <form id="form-add">
+          <input type="text" id="nim-add" name="nim-add" class="form-control" placeholder="NIM" onkeypress="return onlyNumeric(event)" required autofocus>
+          <input type="text" id="nama-add" name="nama-add" class="form-control" placeholder="Nama" required>
+          <input type="text" id="email-add" name="email-add" class="form-control" placeholder="Email" required>
+        </form>
+      </div>
+      <div class="modal-footer"><span class="btn btn-lg btn-primary btn-block btn-simpan" onclick="tambah()"> SIMPAN </span></div>
+    </div>
+  </div>
+</div>
+
+<div id="box-test"></div>
+
+<script type="text/javascript">
+  //160000000
+</script>

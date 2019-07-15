@@ -1,0 +1,135 @@
+.box-header{
+	background-color: black;
+	height: 10%;
+	width: 95%;
+	margin-left: 2.5%;
+}
+.box-isi{
+	width: 100%;
+}
+.box-isi-atas{
+	width: 100%;
+	padding-top: 10%;
+	margin-bottom: 3%;
+}
+.test-load{
+	border: 1px solid red;
+	position: fixed;left: 0px; top: 0px;
+}
+.icon-del{
+	border: 1px solid red;
+	color: black;
+}
+.w-100{
+	width: 100%;
+}
+.table{
+	width: 99%;
+}
+.i-aksi{
+	text-align: center;
+}
+.icon-button{
+	font-size: 30px;
+	cursor: pointer;
+}
+.datatable{
+	float: left;
+}
+.div-datatable{
+	width: 75%;
+}
+.lbl-datatable{
+	width: 20%;
+}
+.box-datatable{
+	border: 1px solid;
+	width: 100%;
+	margin-top: 35px;
+}
+.icon-aksi{
+	float: left;
+}
+.infohide-all{
+	margin-bottom: 70%;
+}
+.aksi-all{
+	margin-bottom: 20%;	
+}
+.btn-tambah{
+	float: right;
+	visibility: hidden;
+}
+.label-nama{
+	color: rgb(217, 217, 217);
+	float: right;
+	font-size: 30px;
+	margin-right: 2%;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 2;
+  top: 0%;
+  left: 0%;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+#myBoxback{
+	position: fixed;
+	z-index: 1;
+	/*border: 1px solid red;*/
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	display: block;
+	transition: 0.3s;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#row {
+  transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.container{
+	padding: 0px;
+}
+.label-header{
+	margin-left: 5%;
+}
+
+
+/*///////////////////////////*/
+/*///////////////////////////*/
+/* style side bar*/

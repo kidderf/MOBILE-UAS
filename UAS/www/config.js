@@ -1,0 +1,1 @@
+var baseURL  = 'http://darmaji-lab.xyz/mobile-uas/index.php';

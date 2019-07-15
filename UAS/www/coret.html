@@ -1,0 +1,44 @@
+<tr>
+	<td>a</td>
+	<td>response[i].NIM</td>
+	<td>response[i].nama
+		<div>
+			<div id="box-tb-hide-i" hidden="">
+				<label id="nim-i">response[i].NIM</label>
+				<label id="nama-i">response[i].nama</label>
+			</div>
+			<div id="box-show-i" class="box-show-all">
+				<div class="box-mata_kuliah box-datatable">
+					<div class="div-datatable datatable">
+						<label id="mata_kuliah-i">response[i].mata_kuliah</lebel>
+					</div>
+				</div>
+				<div class="box-waktu box-datatable">
+					<div class="div-datatable datatable">
+						<label id="waktu-i">response[i].waktu</label>
+					</div>
+				</div>
+				<div class="box-email box-datatable">
+					<div class="div-datatable datatable">
+						<label id="email-i">response[i].email</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</td>
+	<td class="i-aksi">
+		<span class="icon-button">
+			<i class="fa fa-info-circle icon-aksi infoshow-all" id="infoShow-i" aria-hidden="true" onclick="showMore(i)"></i>
+			<i class="fa fa-times-circle icon-aksi infohide-all" id="infoHide-i" aria-hidden="true" onclick="defaultSetting()"></i>
+			<i class="fa fa-trash-o icon-aksi aksi-all" id="aksihapus-i" aria-hidden="true" onclick="hapus(response[i].NIM)"></i>
+			<i class="fa fa-pencil-square-o icon-aksi aksi-all" id="aksiubah-i" aria-hidden="true" data-toggle="modal" data-target="#box-edit" onclick="boxUbah(i)"></i>
+		</span>
+	</td>
+</tr>
+
+
+<tr><td>'+a+'</td><td>'+response[i].NIM+'</td><td>'+response[i].nama+'<div><div id="box-tb-hide-'+i+'" hidden=""><label id="nim-'+i+'">'+response[i].NIM+'</label><label id="nama-'+i+'">'+response[i].nama+'</label></div><div id="box-show-'+i+'" class="box-show-all"><div class="box-progdi box-datatable"><div class="div-datatable datatable"><label id="progdi-'+i+'">'+response[i].mata_kuliah+'</lebel></div></div><div class="box-kelas box-datatable"><div class="div-datatable datatable"><label id="kelas-'+i+'">'+response[i].waktu+'</label></div></div><div class="box-email box-datatable"><div class="div-datatable datatable"><label id="email-'+i+'">'+response[i].email+'</label></div></div></div></div></td><td class="i-aksi"><span class="icon-button"><i class="fa fa-info-circle icon-aksi infoshow-all" id="infoShow-'+i+'" aria-hidden="true" onclick="showMore('+i+')"></i><i class="fa fa-times-circle icon-aksi infohide-all" id="infoHide-'+i+'" aria-hidden="true" onclick="defaultSetting()"></i><i class="fa fa-trash-o icon-aksi aksi-all" id="aksihapus-'+i+'" aria-hidden="true" onclick="hapus('+response[i].NIM+')"></i><i class="fa fa-pencil-square-o icon-aksi aksi-all" id="aksiubah-'+i+'" aria-hidden="true" data-toggle="modal" data-target="#box-edit" onclick="boxUbah('+i+')"></i></span></td></tr>
+
+
+<tr><td>'+a+'</td><td>'+response[i].NIM+'</td><td>'+response[i].nama+'<div><div id="box-tb-hide-'+i+'" hidden=""><label id="nim-'+i+'">'+response[i].NIM+'</label><label id="nama-'+i+'">'+response[i].nama+'</label></div><div id="box-show-'+i+'" class="box-show-all"><div class="box-mata_kuliah box-datatable"><div class="div-datatable datatable"><label id="mata_kuliah-'+i+'">'+response[i].mata_kuliah+'</lebel></div></div><div class="box-waktu box-datatable"><div class="div-datatable datatable"><label id="waktu-'+i+'">'+response[i].waktu+'</label></div></div><div class="box-email box-datatable"><div class="div-datatable datatable"><label id="email-'+i+'">'+response[i].email+'</label></div></div></div></div></td><td class="i-aksi"><span class="icon-button"><i class="fa fa-'+i+'nfo-circle icon-aksi infoshow-all" id="infoShow-'+i+'" aria-hidden="true" onclick="showMore(i)"></i><i class="fa fa-times-circle icon-aksi infohide-all" id="infoHide-'+i+'" aria-hidden="true" onclick="defaultSetting()"></i><i class="fa fa-trash-o icon-aksi aksi-all" id="aksihapus-'+i+'" aria-hidden="true" onclick="hapus('+response[i].NIM+`')"></i><i class="fa fa-pencil-square-o icon-aksi aksi-all" id="aksiubah-'+i+'" aria-hidden="true" data-toggle="modal" data-target="#box-edit" onclick="boxUbah(i)"></i></span></td></tr>
+

@@ -1,0 +1,171 @@
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="cache-nim">About</a>
+  <a href="#" data-toggle="modal" data-target="#box-edit" onclick="boxUbah('myself')">Ubah Data Diri <i class="fa fa-pencil-square-o" style="float: right;" aria-hidden="true"></i></a>
+  <a href="#" data-toggle="modal" data-target="#box-lapor" onclick="boxLapor()">Laporan <i class="fa fa-address-card-o" style="float: right;" aria-hidden="true"></i></a>
+  <a href="#" onclick="logout()">Keluar <i class="fa fa-sign-out" style="float: right;" aria-hidden="true"></i></a>
+</div>
+<div id="myBoxback" onclick="closeNav()"></div>
+
+<div id="konten-lapor"></div>
+
+<div class="row" id="row">
+	<!-- popup box tambah-->
+	<div class="modal fade" id="box-add" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<label>Tambah Data</label>
+					<button type="button" class="close" data-dismiss="modal" onclick="clearInput()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+				</div>
+				<div class="modal-body">
+					<form id="form-add">
+					  <input type="text" id="nim-add" name="nim-add" class="form-control" placeholder="NIM" onkeypress="return onlyNumeric(event)" required autofocus>
+					  <input type="text" id="nama-add" name="nama-add" class="form-control" placeholder="Nama" required>
+					  <input type="text" id="mata_kuliah-add" name="mata_kuliah-add" class="form-control" value="mobile" readonly="" required>
+					  <input type="text" id="email-add" name="email-add" class="form-control" placeholder="Email" required>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-lg btn-primary btn-block btn-simpan" onclick="tambah()">SIMPAN</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- -->
+
+	<!-- popup box lapor-->
+	<div class="modal fade" id="box-lapor" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<label>Laporan</label>
+					<button type="button" class="close" data-dismiss="modal" onclick="clearInput()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+				</div>
+				<div class="modal-body">
+					<form id="form-lapor">
+					  <input type="text" id="nim-lapor" name="nim-lapor" class="form-control" placeholder="NIM" onkeypress="return onlyNumeric(event)" required autofocus readonly="">
+					  <input type="text" id="nama-lapor" name="nama-lapor" class="form-control" placeholder="Nama" required readonly="">
+					  <select id="progdi-lapor" name="progdi-lapor" class="form-control" required>
+					  	<option value="">Progdi</option>
+					  	<option value=""></option>
+					  	<option value="Teknik Informatika">Teknik Informatika</option>
+					  	<option value="Sistem Informasi">Sistem Informasi</option>
+					  	<option value="Manajement Informatika">Manajement Informatika</option>
+					  	<option value="Teknik Komputer">Teknik Komputer</option>
+					  </select>
+					  <input type="text" id="kelas-lapor" name="kelas-lapor" class="form-control" placeholder="Kelas" required>
+					  <input type="text" id="url-lapor" name="url-lapor" class="form-control" placeholder="URL" required>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-lg btn-primary btn-block btn-simpan" onclick="lapor()">SIMPAN</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- -->
+
+	<!-- popup box ubah-->
+	<div class="modal fade" id="box-edit" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<label>Ubah Data</label>
+					<button type="button" class="close" data-dismiss="modal" onclick="clearInput()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+				</div>
+				<div class="modal-body">
+					<form id="form-edit">
+						<label id="ubahstat" hidden></label>
+						<input type="text" id="nim-default" name="nim-default" class="form-control" value="" hidden readonly="">
+						<input type="text" id="email-default" name="email-default" class="form-control" value="" hidden readonly="">
+						<input type="text" id="nim-edit" name="nim-edit" class="form-control" value="" onkeypress="return onlyNumeric(event)" required autofocus>
+						<input type="text" id="nama-edit" name="nama-edit" class="form-control" value="" required>
+						<input type="text" id="mata_kuliah-edit" name="mata_kuliah-edit" class="form-control" value="" required value="mobile" readonly="">
+						<input type="text" id="email-edit" name="email-edit" class="form-control" value="" required>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-lg btn-primary btn-block btn-simpan" onclick="ubah()">SIMPAN</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- -->
+
+	<div class="box-header">
+		<label class="label label-header">
+			<span style="font-size:30px;cursor:pointer; color: white; margin-left: 25%;" onclick="openNav()"><i class="fa fa-align-justify" aria-hidden="true"></i></span>
+		</label>
+		<label class="label label-header label-nama" id="cache-nama">
+			nama
+		</label>
+	</div>
+	<div class="box-isi" id="box-registrasi">
+		<div class="box-isi-atas">
+			<label class="isi-label">Data Registrasi.</label>
+			<button type="button" class="btn btn-primary btn-md btn-tambah" id="btn-tambah" data-toggle="modal" data-target="#box-add">Tambah <i class="fa fa-plus" aria-hidden="true"></i></button>
+		</div>
+	</div>
+	<div class="col-xs-12 w-100">
+	  	<div class="table-responsive">
+	  		<center>
+			    <table class="table table-bordered table-hover"">
+					<thead>
+						<tr>
+							<th width="5%">No</th>
+							<th width="25%">NIM</th>
+							<th width="60%">Nama</th>
+							<th width="10%">Aksi</th>
+						</tr>
+					</thead>
+					<tr hidden="">
+						<td>isi nim</td>
+						<td>isi nama
+							<div>
+								<div id="box-tb-hide-" hidden="">
+									<label id="nim-">A</label>
+									<label id="nama-">B</label>
+								</div>
+								<div id="box-show-" class="box-show-all">
+									<div class="box-progdi box-datatable">
+										<label class="lbl-datatable datatable">Progdi</label><div class="div-datatable datatable" id="progdi-"> : C</div>
+									</div>
+									<div class="box-kelas box-datatable">
+										<label class="lbl-datatable datatable">Kelas</label><div class="div-datatable datatable" id="kelas-"> : D</div>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="i-aksi">
+							<span class="icon-button">
+								<i class="fa fa-info-circle icon-aksi" aria-hidden="true" onclick="showMore()"></i>
+								<i class="fa fa-times-circle icon-aksi" aria-hidden="true" onclick="hideMore()"></i>
+							</span>
+						</td>
+					</tr>
+					<tbody id="test-load">
+						<tr>
+							<td>isi no</td>
+							<td>isi nim</td>
+							<td>isi nama</td>
+							<td>isi aksi</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+						  <td colspan="5" class="text-center">Data diperoleh dari <a href="http://darmaji-lab.xyz" target="_blank">darmaji-lab.xyz</a>
+						</tr>
+					</tfoot>
+			    </table>
+			</center>
+	  	</div><!--end of .table-responsive-->
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		loadPageReg();
+		cekLogin();
+		loadMore();
+		$('#myBoxback').hide();
+	});
+</script>
